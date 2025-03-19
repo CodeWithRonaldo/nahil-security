@@ -1,0 +1,75 @@
+.container {
+    text-align: center;
+    padding: 50px 20px;
+    background: #fff;
+  }
+  .orangeBar {
+    width: 100px;
+    height: 4px;
+    background-color: #f7941d;
+    margin: 0 auto 20px;
+  }
+  .heading {
+    font-size: 2.8rem;
+    color: #333;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .breakLine {
+    display: block;
+  }
+  
+  .subheading {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  
+  .servicesContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .serviceCard {
+    background: #fff;
+    border-radius: 50%;
+    padding: 30px;
+    width: 180px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .serviceCard:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .serviceTitle {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0d0d0d;
+  }
+  
+  .serviceText {
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+  }
+  
+  
+  
