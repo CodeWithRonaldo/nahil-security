@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "./Navbar.module.css";
+import styles from "./NavBar.module.css";
 import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
 import logo from "../../assets/Nahil-logo.png"
 
