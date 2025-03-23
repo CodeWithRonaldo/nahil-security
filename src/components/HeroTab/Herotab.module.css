@@ -1,0 +1,87 @@
+.tabsContainer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    
+  }
+  
+  .tab {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+    
+  }
+  
+  .tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .activeTab {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-top: 5px solid orange;
+  }
+  
+  .tabNumber {
+    font-size: 3.5rem;
+    color: #999;
+    font-weight: 200;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+  }
+  
+  .activeTab .tabNumber {
+    color: #fff;
+  }
+  
+  .tabTitle {
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+  }
+  
+  
+  .progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .progressIndicator {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(to right, #ff7f27, #ffd700); 
+    transition: left 0.3s ease;
+  }
+
+ 
+  
+  
+  
+  @media (max-width: 768px) {
+    
+    .tabsContainer {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .tab {
+      padding: 15px 20px;
+      
+    }
+    
+    .progressBar {
+      display: none;
+    }
+  }
