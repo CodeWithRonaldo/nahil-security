@@ -39,15 +39,16 @@
   .serviceCard {
     background: #fff;
     border-radius: 50%;
-    padding: 30px;
-    width: 180px;
-    height: 180px;
+    padding: 20px;
+    width: 250px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
+    text-decoration: none;
   }
   
   .serviceCard:hover {
@@ -55,21 +56,29 @@
   }
   
   .icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    width: 70px; 
+    height: 50px;
+    margin-bottom: 20px;
   }
   
+  .icon img {
+    width: 100%; 
+    height: auto;
+  }
+
+  
   .serviceTitle {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #0d0d0d;
   }
   
   .serviceText {
-    font-size: 0.9rem;
+    font-size:1rem;
     color: #666;
     text-decoration: none;
   }
-  
-  
-  
+.cta{
+  margin-top: 50px;
+  font-size: 20px;
+}
