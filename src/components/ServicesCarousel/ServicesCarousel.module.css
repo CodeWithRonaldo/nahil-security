@@ -1,8 +1,8 @@
 .servicesCarouselContainer {
-  padding: 60px 80px;
+  padding: 20px 20px;
 
   color: white;
-  /* height: 1200px; */
+  /* height: 800px; */
   background: linear-gradient(to bottom, #0d1b2a, #7a0f2c 50%, transparent 50%);
 }
 
@@ -21,8 +21,9 @@
   margin-top: 10px;
 }
 
-.headerLinks {
+.headerLinks  {
   margin-top: 15px;
+  /* text-decoration: none; */
 }
 
 .headerLinks a {
@@ -32,7 +33,10 @@
   text-decoration: none;
   border-bottom: 2px solid white;
 }
-
+.headerLinks a:hover{
+  border-bottom: 2px solid #7a0f2c;
+  color: orange;
+}
 .servicesCarousel {
   margin-top: 30px;
   padding: 20px;

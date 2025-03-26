@@ -12,7 +12,7 @@
   }
   
   .image {
-    width: 150px;
+    width: 200px;
     height: 150px;
     border-radius: 50%;
     position: absolute;
@@ -36,7 +36,7 @@
   
   .position {
     font-size: 0.9rem;
-    color: #888;
+    color: red;
     
   }
   

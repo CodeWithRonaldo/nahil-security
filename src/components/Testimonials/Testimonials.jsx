@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 
 const testimonials = [
   {
-    name: "Khamir Rabdallah",
+    name: "Patrick Koeman",
     position: "Billy Marsh Associates",
     text: "Your professionalism and discretion was impeccable during my personal crisis, I am eternally grateful",
     image: TestimonialImg1,
   },
   {
-    name: "Patrick Koeman",
+    name: "Khamir Rabdallah",
     position: "CEO, BESTA Engineering",
     text: "As always, very good service for the Recall notice, and some service also done at the same time. I just had to get the tires changes",
     image: TestimonialImg2,
