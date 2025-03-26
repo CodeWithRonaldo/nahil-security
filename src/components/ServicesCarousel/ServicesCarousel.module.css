@@ -2,7 +2,7 @@
   padding: 60px 80px;
 
   color: white;
-  height: 1200px;
+  /* height: 1200px; */
   background: linear-gradient(to bottom, #0d1b2a, #7a0f2c 50%, transparent 50%);
 }
 
@@ -47,6 +47,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .serviceImage {
@@ -70,27 +71,17 @@
   margin-top: 10px;
 }
 
-.serviceButton {
-  background-color: white;
-  border: none;
-  color: black;
-  font-size: 1.5rem;
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: 10px;
-}
 
 
-.serviceButton:hover {
-  background-color: orange;
-}
+
+
 /* Swiper Navigation Buttons */
 :global(.swiper-button-prev),
 :global(.swiper-button-next) {
-  color: white !important;
+  color: black !important;
 }
 
 :global(.swiper-pagination-bullet) {
-  background: white !important;
+  background: black !important;
+  
 }
