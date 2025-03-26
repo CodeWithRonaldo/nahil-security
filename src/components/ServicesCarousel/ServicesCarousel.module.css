@@ -1,87 +1,96 @@
 .servicesCarouselContainer {
-    padding: 60px 80px;
-    background: linear-gradient(to right, #0d1b2a, #7a0f2c);
-    color: white;
-  }
-  
-  .header {
-    text-align: left;
-  }
-  
-  .header h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-transform: capitalize;
-  }
-  
-  .header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
-  
-  .headerLinks {
-    margin-top: 15px;
-  }
-  
-  .headerLinks a {
-    margin-right: 20px;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 2px solid white;
-  }
-  
-  .servicesCarousel {
-    margin-top: 30px;
-    padding: 20px;
-  }
-  
-  .serviceCard {
-    background: white;
-    color: black;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .serviceImage {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  .serviceContent {
-    padding: 15px;
-  }
-  
-  .serviceContent h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .serviceContent p {
-    font-size: 1rem;
-    margin-top: 10px;
-  }
-  
-  .serviceButton {
-    background-color: orange;
-    border: none;
-    color: white;
-    font-size: 1.5rem;
-    padding: 5px 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: 10px;
-  }
-  
-  /* Swiper Navigation Buttons */
-  :global(.swiper-button-prev),
-  :global(.swiper-button-next) {
-    color: white !important;
-  }
-  
-  :global(.swiper-pagination-bullet) {
-    background: white !important;
-  }
-  
+  padding: 60px 80px;
+
+  color: white;
+  height: 1200px;
+  background: linear-gradient(to bottom, #0d1b2a, #7a0f2c 50%, transparent 50%);
+}
+
+.header {
+  text-align: left;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.headerLinks {
+  margin-top: 15px;
+}
+
+.headerLinks a {
+  margin-right: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid white;
+}
+
+.servicesCarousel {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: black;
+  padding: 5px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.serviceImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover; 
+  border-radius: 8px;
+}
+
+.serviceContent {
+  padding: 15px;
+}
+
+.serviceContent h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.serviceContent p {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.serviceButton {
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+.serviceButton:hover {
+  background-color: orange;
+}
+/* Swiper Navigation Buttons */
+:global(.swiper-button-prev),
+:global(.swiper-button-next) {
+  color: white !important;
+}
+
+:global(.swiper-pagination-bullet) {
+  background: white !important;
+}

@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styles from "./ServicesCarousel.module.css";
+import dispatchimg from "../../assets/dispatch.jpg"
 
 const ServicesCarousel = () => {
   const services = [
@@ -14,21 +15,42 @@ const ServicesCarousel = () => {
       title: "Dispatch Arrangement",
       description:
         "You want immediate and accurate dispatching services, and that is what we provide! Our dispatchers...",
-      image: "dispatch-image.jpg",
+      image: dispatchimg,
     },
     {
       id: 2,
       title: "Travelling Exhibitions",
       description:
         "Facility Inspection and Security Analysis, Guarding, and Physical Security Coordination with Government Security...",
-      image: "travelling-image.jpg",
+      image: dispatchimg,
     },
     {
-      id: 3,
+      id: 4,
       title: "Guarding Services",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
-      image: "guarding-image.jpg",
+      image: dispatchimg,
+    },
+    {
+      id: 5,
+      title: "Guarding Services",
+      description:
+        "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
+      image: dispatchimg,
+    },
+    {
+      id: 6,
+      title: "Guarding Services",
+      description:
+        "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
+      image: dispatchimg,
+    },
+    {
+      id: 7,
+      title: "Guarding Services",
+      description:
+        "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
+      image: dispatchimg,
     },
   ];
 
@@ -51,9 +73,9 @@ const ServicesCarousel = () => {
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={20}
         slidesPerView={1}
-        navigation
+        navigation={{dragable:true}}
         pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
+        // scrollbar={{ draggable: true }}
         breakpoints={{
           640: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
@@ -67,7 +89,7 @@ const ServicesCarousel = () => {
             <div className={styles.serviceContent}>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <button className={styles.serviceButton}>+</button>
+              {/* <button className={styles.serviceButton}>+</button> */}
             </div>
           </SwiperSlide>
         ))}
