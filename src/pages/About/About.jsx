@@ -6,6 +6,7 @@ import StatImage1 from "../../assets/stat1.png";
 import StatImage2 from "../../assets/stat2.png"; 
 import StatImage3 from "../../assets/stat3.png"; 
 import Testimonials from "../../components/Testimonials/Testimonials";
+import MissionVision from "../../components/MissionVision/MissionVision";
 
 const About = () => {
   const ref = useRef(null);
@@ -127,6 +128,7 @@ const About = () => {
         </motion.div>
       </div>
       <Testimonials/>
+      <MissionVision/>
     </motion.div>
   );
 };

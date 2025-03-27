@@ -81,11 +81,11 @@
     list-style: none;
     padding: 10px;
     margin: 0;
-    display: block; /* Allow dropdown to be displayed based on state */
+    display: block; 
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     width: 200px;
-    z-index: 4; /* Added z-index to ensure dropdown appears above other elements */
+    z-index: 3; 
 }
   
 .dropdownMenu li {
@@ -142,7 +142,7 @@
 }
   
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .navLinks {
         display: none;
         flex-direction: column;
@@ -176,7 +176,7 @@
         display: none;
         position: static;
         box-shadow: none;
-        background: none;
+        background: white;
     }
   
     .dropdown:hover .dropdownMenu {
