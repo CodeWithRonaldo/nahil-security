@@ -14,7 +14,7 @@ const Navbar = () => {
       <header className={styles.topHeader}>
         <div className={styles.container}>
           <span className={styles.companyName}>NAHIL SECURITY COMPANY LIMITED</span>
-          <div className={styles.headerLinks}>
+          {/* <div className={styles.headerLinks}>
             <input type="text" placeholder="Search..." className={styles.searchBar} />
             <a href="#">Contact us</a>
             <a href="#">FAQs</a>
@@ -25,7 +25,7 @@ const Navbar = () => {
               <a href="#"><FaTwitter /></a>
               <a href="#"><FaWhatsapp /></a>
             </span>
-          </div>
+          </div> */}
         </div>
       </header>
 
@@ -41,7 +41,7 @@ const Navbar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
 
-            {/* Security Services Dropdown */}
+            
             <li 
               className={styles.dropdown}
               onMouseEnter={() => setSecurityDropdownOpen(true)}

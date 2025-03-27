@@ -1,7 +1,8 @@
 import React from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import styles from "./ServicesSection.module.css";
 import { Link } from "react-router-dom";
-import { MdOutlineSecurity } from "react-icons/md";
 import SafeIcon from "../../assets/stay-safe.png";
 import PoliceMan from "../../assets/policeman.png";
 import Vault from "../../assets/vault1.png";
@@ -17,32 +18,95 @@ const services = [
 ];
 
 const SecurityServices = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  // Variants for section animations
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2 // Stagger the children animations
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
   return (
-    <section className={styles.container}>
+    <section 
+      ref={ref}
+      className={styles.container}
+    >
       <div className={styles.orangeBar}></div>
-      <h2 className={styles.heading}>
+      
+      <motion.h2 
+        className={styles.heading}
+        variants={itemVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         A global security company with
         <span className={styles.breakLine}>global reach</span>
-      </h2>
-      <p className={styles.subheading}>
+      </motion.h2>
+      
+      <motion.p 
+        className={styles.subheading}
+        variants={itemVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         If, as a traditional business, you're looking to make a successful
         digital transformation for your company, you need the right tools to
         work for you.
-      </p>
-      <div className={styles.servicesContainer}>
+      </motion.p>
+      
+      <motion.div 
+        className={styles.servicesContainer}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         {services.map((service, index) => (
-          <Link key={index} to={service.link} className={styles.serviceCard}>
-            <div className={styles.icon}>
-              <img src={service.icon} alt={service.title} />
-            </div>
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          >
+            <Link to={service.link} className={styles.serviceCard}>
+              <div className={styles.icon}>
+                <img src={service.icon} alt={service.title} />
+              </div>
 
-            <h3 className={styles.serviceTitle}>{service.title}</h3>
+              <h3 className={styles.serviceTitle}>{service.title}</h3>
 
-            <p className={styles.serviceLink}>Learn more about this service</p>
-          </Link>
+              <p className={styles.serviceLink}>Learn more about this service</p>
+            </Link>
+          </motion.div>
         ))}
-      </div>
-      <p className={styles.cta}>Bring them together and you overcome the ordinary. <Link>See what we do</Link> </p>
+      </motion.div>
+      
+      <motion.p 
+        className={styles.cta}
+        variants={itemVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        Bring them together and you overcome the ordinary. <Link>See what we do</Link>
+      </motion.p>
     </section>  
   );
 };
