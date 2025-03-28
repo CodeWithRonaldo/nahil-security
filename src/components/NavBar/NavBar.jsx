@@ -1,106 +1,127 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./NavBar.module.css";
-import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import logo from "../../assets/Nahil-logo.png";
+
+const Dropdown = ({ title, links }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div 
+      className={styles.dropdown}
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <div 
+        className={styles.dropdownTitle} 
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {title} 
+        {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+      </div>
+      {isOpen && (
+        <ul className={styles.dropdownMenu}>
+          {links.map((link) => (
+            <li key={link.path}>
+              <Link to={link.path}>{link.label}</Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [securityDropdownOpen, setSecurityDropdownOpen] = useState(false);
-  const [logisticsDropdownOpen, setLogisticsDropdownOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1000);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const securityServices = [
+    { path: "/guarding-services", label: "Guarding Services" },
+    { path: "/general-services", label: "General Services" },
+    { path: "/secure-valuable", label: "Secure Valuable" },
+    { path: "/airline-aviation-security", label: "Airline/Aviation Security" },
+    { path: "/safe-keeping", label: "Safe Keeping" },
+    { path: "/dispatch-arrangement", label: "Dispatch Arrangement" },
+    { path: "/counter-surveillance", label: "Counter Surveillance" },
+    { path: "/cctv", label: "Closed Circuit TV" },
+    { path: "/private-events", label: "Private Events" },
+    { path: "/vault-storage", label: "Vault & Secure Storage Facilities" },
+    { path: "/travelling-exhibitions", label: "Travelling Exhibitions" }
+  ];
+
+  const logisticsServices = [
+    { path: "/third-party-logistics", label: "Third Party Logistics (3PL)" },
+    { path: "/consignments", label: "Consignments/Cargo Handling" },
+    { path: "/express-delivery", label: "Express Delivery" },
+    { path: "/secured-delivery", label: "Secured Delivery" },
+    { path: "/commodities", label: "Commodities" },
+    { path: "/customs-brokerage", label: "Customs Brokerage" },
+    { path: "/diamond-jewellery", label: "Diamond and Jewelleries" },
+    { path: "/fine-arts", label: "Fine Arts" },
+    { path: "/jet-service", label: "Jet Service" },
+    { path: "/trade-show-packages", label: "Trade Show Packages" }
+  ];
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
-    <>
-      <header className={styles.topHeader}>
-        <div className={styles.container}>
-          <span className={styles.companyName}>NAHIL SECURITY COMPANY LIMITED</span>
-          {/* <div className={styles.headerLinks}>
-            <input type="text" placeholder="Search..." className={styles.searchBar} />
-            <a href="#">Contact us</a>
-            <a href="#">FAQs</a>
-            <a href="#">Career</a>
-            <a href="#">News Blog</a>
-            <span className={styles.socialIcons}>
-              <a href="#"><FaFacebook /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaWhatsapp /></a>
-            </span>
-          </div> */}
-        </div>
-      </header>
-
-      <nav className={styles.mainNavbar}>
+    <nav className={styles.navbar}>
+      <div className={styles.navContainer}>
         <Link to="/" className={styles.logo}>
           <img src={logo} alt="Nahil Security" />
         </Link>
-        <div className={styles.container}>
-          <button className={styles.hamburger} onClick={() => setMenuOpen(!menuOpen)}>
-            ☰
-          </button>
-          <ul className={`${styles.navLinks} ${menuOpen ? styles.showMenu : ""}`}>
+
+        <div className={styles.mobileMenuToggle} onClick={toggleMenu}>
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </div>
+
+        <div 
+          className={`
+            ${styles.navMenu} 
+            ${menuOpen ? styles.navMenuActive : ''}
+          `}
+        >
+          <ul className={styles.navList}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
 
-            
-            <li 
-              className={styles.dropdown}
-              onMouseEnter={() => setSecurityDropdownOpen(true)}
-              onMouseLeave={() => setSecurityDropdownOpen(false)}
-            >
-              <span>
-                Security Services ▼
-              </span>
-              {securityDropdownOpen && (
-                <ul className={styles.dropdownMenu}>
-                  <li><Link to="/guarding-services">Guarding Services</Link></li>
-                  <li><Link to="/general-services">General Services</Link></li>
-                  <li><Link to="/secure-valuable">Secure Valuable</Link></li>
-                  <li><Link to="/airline-aviation-security">Airline/Aviation Security</Link></li>
-                  <li><Link to="/safe-keeping">Safe Keeping</Link></li>
-                  <li><Link to="/dispatch-arrangement">Dispatch Arrangement</Link></li>
-                  <li><Link to="/counter-surveillance">Counter Surveillance</Link></li>
-                  <li><Link to="/cctv">Closed Circuit TV</Link></li>
-                  <li><Link to="/private-events">Private Events</Link></li>
-                  <li><Link to="/vault-storage">Vault & Secure Storage Facilities</Link></li>
-                  <li><Link to="/travelling-exhibitions">Travelling Exhibitions</Link></li>
-                </ul>
-              )}
+            <li>
+              <Dropdown 
+                title="Security Services" 
+                links={securityServices} 
+              />
             </li>
 
-            {/* Logistics Services Dropdown */}
-            <li 
-              className={styles.dropdown}
-              onMouseEnter={() => setLogisticsDropdownOpen(true)}
-              onMouseLeave={() => setLogisticsDropdownOpen(false)}
-            >
-              <span>
-                Logistics Services ▼
-              </span>
-              {logisticsDropdownOpen && (
-                <ul className={styles.dropdownMenu}>
-                  <li><Link to="/third-party-logistics">Third Party Logistics (3PL)</Link></li>
-                  <li><Link to="/consignments">Consignments/Cargo Handling</Link></li>
-                  <li><Link to="/express-delivery">Express Delivery</Link></li>
-                  <li><Link to="/secured-delivery">Secured Delivery</Link></li>
-                  <li><Link to="/commodities">Commodities</Link></li>
-                  <li><Link to="/customs-brokerage">Customs Brokerage</Link></li>
-                  <li><Link to="/diamond-jewellery">Diamond and Jewelleries</Link></li>
-                  <li><Link to="/fine-arts">Fine Arts</Link></li>
-                  <li><Link to="/jet-service">Jet Service</Link></li>
-                  <li><Link to="/trade-show-packages">Trade Show Packages</Link></li>
-                </ul>
-              )}
+            <li>
+              <Dropdown 
+                title="Logistics Services" 
+                links={logisticsServices} 
+              />
             </li>
 
             <li><Link to="/appointment">Appointment</Link></li>
           </ul>
+
           <div className={styles.navActions}>
             <button className={styles.trackBtn}>Track Shipment</button>
           </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

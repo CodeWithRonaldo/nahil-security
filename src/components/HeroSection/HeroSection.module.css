@@ -1,147 +1,233 @@
 .heroContainer {
-  position: relative;
-  width: 100%;
-  /* height: 100vh; */
-  min-height: 600px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
   color: white;
-  overflow: hidden;
-}
-
-/* .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-} */
-
-.content {
-  /* position: relative; */
-  /* z-index: 2; */
-  display: flex;
-
-  /* flex-direction: column; */
-  justify-content: space-between;
-  height: calc(100% - 120px);
-  padding: 0 10%;
-}
-
-.secimg {
-  width: 500px;
-}
-
-.textContent {
-  max-width: 600px;
-  margin-top: 100px;
-}
-
-.title {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  color: #7a2828;
-  display: flex;
-  flex-direction: column;
-}
-
-.secondLine {
-  position: relative;
-}
-
-.secondLine::before {
-  content: "";
-  position: absolute;
-  bottom: 15px;
-  left: 0;
-  width: 80%;
-  height: 3px;
-  background-color: #ff7f27;
-  z-index: -1;
-}
-
-.description {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
-  color: #333;
-}
-
-.ctaButton {
-  background-color: white;
-  color: #7a2828;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* Tabs styling */
-/* .tabsContainer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  
-  z-index: 3;
-} */
-
-/* .tab {
-  flex: 1;
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 20px;
-  cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.heroContent {
+  /* display: flex; */
+  background-image: url("../../assets/white-security3.png");
+  background-position: top right;
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 100%;
+  /* object-fit: cover; */
+  /* flex-direction: row; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* max-width: 1200px; */
+  width: 100%;
+  /* margin: 0 auto; */
+  /* text-align: center; */
+  /* gap: 2rem; */
 }
 
-.tab:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.textSection {
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.activeTab {
-  background-color: rgba(255, 255, 255, 0.2);
+.heroTitle {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #4ecdc4;
+  text-align: center;
 }
 
-.tabNumber {
-  font-size: 3.5rem;
-  color: #999;
-  font-weight: 200;
-  margin-right: 15px;
-  transition: color 0.3s ease;
+.heroDescription {
+  font-size: clamp(1rem, 4vw, 1.2rem);
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 500px;
 }
 
-.activeTab .tabNumber {
-  color: #fff;
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.tabTitle {
-  font-size: 1.2rem;
-  color: white;
-  font-weight: 500;
-} */
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 4vw, 1rem);
+  color: #e0e0e0;
+}
 
-@media (max-width: 768px) {
-  .title {
-    font-size: 3rem;
+.checkIcon {
+  color: #4ecdc4;
+  stroke-width: 3;
+  min-width: 24px;
+}
+
+.ctaSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.primaryButton {
+  background-color: #4ecdc4;
+  color: #16213e;
+}
+
+.primaryButton:hover {
+  background-color: #45b7aa;
+}
+
+.secondaryButton {
+  background-color: transparent;
+  border: 2px solid #4ecdc4;
+  color: #4ecdc4;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(78, 205, 196, 0.1);
+}
+
+.imageSection {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design for Different Screen Sizes */
+@media (max-width: 767px) {
+  .heroContent {
+    flex-direction: row;
+
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 
-  .description {
-    font-size: 1rem;
+  .textSection {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .imageSection {
+    flex-basis: 50%;
+    max-width: 350px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heroTitle,
+  .heroDescription {
+    text-align: center;
+  }
+
+  .featureList {
+    align-items: center;
+  }
+}
+
+/* Tablet and Larger Screens */
+@media (min-width: 768px) {
+  .heroContent {
+    flex-direction: row;
+    text-align: left;
+    gap: 4rem;
+  }
+
+  .textSection {
+    align-items: flex-start;
+    max-width: 50%;
+  }
+
+  .heroTitle,
+  .heroDescription {
+    text-align: left;
+  }
+
+  .featureList {
+    align-items: flex-start;
+  }
+
+  .ctaSection {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Small Devices */
+@media (max-width: 480px) {
+  .heroContainer {
+    padding: 0.5rem;
+  }
+
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroDescription {
+    font-size: 0.9rem;
+  }
+
+  .featureItem {
+    font-size: 0.8rem;
+  }
+
+  .ctaSection {
+    gap: 0.5rem;
+  }
+
+  .imageSection {
+    max-width: 280px;
   }
 }
