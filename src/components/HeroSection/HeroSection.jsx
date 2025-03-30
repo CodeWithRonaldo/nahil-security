@@ -1,8 +1,8 @@
 import React from "react";
-// import {motion } from "framer-motion;
+import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import styles from "./HeroSection.module.css";
-import SecImg from "../../assets/security-man.png";
+// import SecImg from "../../assets/security-man.png";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -32,22 +32,6 @@ const HeroSection = () => {
     },
   };
 
-  const imageVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.9,
-    },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
-
   const serviceFeatures = [
     "Secure Logistics",
     "Timely Delivery",
@@ -57,59 +41,47 @@ const HeroSection = () => {
   return (
     <div className={styles.heroContainer}>
       <div className={styles.heroContent}>
-        <div
+        <motion.div
           className={styles.textSection}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <h1 className={styles.heroTitle} variants={itemVariants}>
+          <motion.h1 className={styles.heroTitle} variants={itemVariants}>
             Reliable Security &
             <br />
             Logistics Solutions
-          </h1>
+          </motion.h1>
 
-          <p className={styles.heroDescription} variants={itemVariants}>
+          <motion.p className={styles.heroDescription} variants={itemVariants}>
             Providing top-tier security and logistics services with precision,
             speed, and unmatched reliability.
-          </p>
-          <div>
-            <ul className={styles.featureList} variants={containerVariants}>
-              {serviceFeatures.map((feature, index) => (
-                <li
-                  key={index}
-                  variants={itemVariants}
-                  className={styles.featureItem}
-                >
-                  <Check className={styles.checkIcon} />
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+          </motion.p>
+          
+          <motion.ul className={styles.featureList} variants={containerVariants}>
+            {serviceFeatures.map((feature, index) => (
+              <motion.li
+                key={index}
+                className={styles.featureItem}
+                variants={itemVariants}
+              >
+                <Check className={styles.checkIcon} />
+                {feature}
+              </motion.li>
+            ))}
+          </motion.ul>
 
-          <div className={styles.ctaSection} variants={containerVariants}>
-            <button className={styles.primaryButton} variants={itemVariants}>
+          <motion.div className={styles.ctaSection} variants={containerVariants}>
+            <motion.button className={styles.primaryButton} variants={itemVariants}>
               Explore Services <ArrowRight />
-            </button>
+            </motion.button>
 
-            <button className={styles.secondaryButton} variants={itemVariants}>
+            <motion.button className={styles.secondaryButton} variants={itemVariants}>
               Contact Us
-            </button>
-          </div>
-        </div>
-        {/* <div 
-          className={styles.imageSection}
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <img 
-            src={SecImg} 
-            alt="Security Services" 
-            className={styles.heroImage}
-          />
-        </div> */}
+            </motion.button>
+          </motion.div>
+        </motion.div>
+        {/* Image is handled through CSS background */}
       </div>
     </div>
   );

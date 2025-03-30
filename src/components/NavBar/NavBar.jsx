@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import logo from "../../assets/Nahil-logo.png";
 
-const Dropdown = ({ title, links }) => {
+const NavDropdown = ({ title, path, links, closeMenu }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = (e) => {
+    e.stopPropagation();
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div 
-      className={styles.dropdown}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
-      <div 
-        className={styles.dropdownTitle} 
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {title} 
-        {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+    <div className={styles.navItemWithDropdown}>
+      <div className={styles.navLinkContainer}>
+        <Link to={path} onClick={closeMenu} className={styles.navLink}>
+          {title}
+        </Link>
+        <button 
+          className={styles.dropdownArrow} 
+          onClick={toggleDropdown}
+          aria-label={`Toggle ${title} dropdown`}
+        >
+          {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+        </button>
       </div>
+      
       {isOpen && (
         <ul className={styles.dropdownMenu}>
           {links.map((link) => (
             <li key={link.path}>
-              <Link to={link.path}>{link.label}</Link>
+              <Link to={link.path} onClick={closeMenu}>{link.label}</Link>
             </li>
           ))}
         </ul>
@@ -36,10 +43,19 @@ const Dropdown = ({ title, links }) => {
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 1000);
+  const location = useLocation();
+
+  // Close menu when route changes
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 1000);
+      if (window.innerWidth > 1000) {
+        setMenuOpen(false);
+      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -77,10 +93,14 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
-        <Link to="/" className={styles.logo}>
+        <Link to="/" className={styles.logo} onClick={closeMenu}>
           <img src={logo} alt="Nahil Security" />
         </Link>
 
@@ -95,24 +115,25 @@ const Navbar = () => {
           `}
         >
           <ul className={styles.navList}>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-
-            <li><Link to="/security-services">
-              <Dropdown 
+            <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+            <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
+            <li>
+              <NavDropdown 
                 title="Security Services" 
-                links={securityServices} 
-              /></Link>
+                path="/security-services"
+                links={securityServices}
+                closeMenu={closeMenu}
+              />
             </li>
-
-            <li><Link to="/logistic-services">
-              <Dropdown 
+            <li>
+              <NavDropdown 
                 title="Logistics Services" 
-                links={logisticsServices} 
-              /></Link>
+                path="/logistic-services"
+                links={logisticsServices}
+                closeMenu={closeMenu}
+              />
             </li>
-
-            <li><Link to="/appointment">Appointment</Link></li>
+            <li><Link to="/appointment" onClick={closeMenu}>Appointment</Link></li>
           </ul>
 
           <div className={styles.navActions}>
