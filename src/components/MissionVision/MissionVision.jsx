@@ -7,7 +7,7 @@ const MissionVision = () => {
   return (
     <div className={styles.container}>
       {/* Mission Section */}
-      <div className={styles.card}>
+      <div className={styles.card} class={styles.missioncard}>
         <div className={styles.icon}>
           <img src={missionIcon} alt="Mission Icon" />
         </div>

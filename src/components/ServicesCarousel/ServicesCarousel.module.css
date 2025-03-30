@@ -3,7 +3,9 @@
 
   color: white;
   /* height: 800px; */
-  background: linear-gradient(to bottom, #0d1b2a, #7a0f2c 50%, transparent 50%);
+  /* background: linear-gradient(to bottom, #0d1b2a, #7a0f2c 50%, transparent 50%); */
+  background: linear-gradient(to bottom, #545485 0%, #16213e 50%), transparent 50%;
+
 }
 
 .header {

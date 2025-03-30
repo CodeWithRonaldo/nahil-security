@@ -4,9 +4,9 @@
   align-items: center;
   gap: 40px;
   flex-wrap: wrap; 
-  background: linear-gradient(to right, #200933, #800020);
+  background: linear-gradient(to bottom, #545485 0%, #16213e 50%), transparent 50%;
   padding: 20px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   /* text-align: center; */
 }
 
@@ -19,6 +19,10 @@
   text-align: center;
   max-width: 500px;
   /* width: 100%; */
+}
+.missioncard{
+  border-bottom: 2px solid #4ecdc4;
+
 }
 
 .icon {
