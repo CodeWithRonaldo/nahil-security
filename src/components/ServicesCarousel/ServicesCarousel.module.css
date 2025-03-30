@@ -88,6 +88,6 @@
 }
 
 :global(.swiper-pagination-bullet) {
-  background: black !important;
+  background: white!important;
   
 }

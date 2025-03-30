@@ -4,7 +4,7 @@
   align-items: center;
   gap: 40px;
   flex-wrap: wrap; 
-  background: linear-gradient(to bottom, #545485 0%, #16213e 50%), transparent 50%;
+  background: linear-gradient(to right,  #1a1a2e , #16213e );
   padding: 20px 20px;
   margin-bottom: 20px;
   /* text-align: center; */

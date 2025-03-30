@@ -49,7 +49,7 @@ const ServicesCarousel = () => {
     },
     {
       id: 5,
-      title: "Private Events Services",
+      title: "Private Event Services",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
       image: privateEventsImage,
@@ -58,14 +58,14 @@ const ServicesCarousel = () => {
       id: 6,
       title: "Safe Keeping",
       description:
-        "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
+        "Secure storage and safekeeping services for your valuables.",
       image: safeKeepingImage,
     },
     {
       id: 7,
       title: "Closed Circuit",
       description:
-        "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
+        "State-of-the-art CCTV monitoring and management systems.",
       image: cctvImage,
     },
   ];
