@@ -1,0 +1,254 @@
+.securityServicesPage {
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Hero Section Styles */
+  .heroSection {
+    min-height: 80vh;
+    width: 100%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    overflow: hidden;
+  }
+  
+  .heroContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heroText {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .heroText h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .heroText h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #45b7aa;
+    margin-bottom: 1.5rem;
+  }
+  
+  .heroText p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  
+  .appointmentBtn {
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .appointmentBtn:hover {
+    background-color: #45b7aa;
+  }
+  
+  .heroImage {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 500px;
+  }
+  
+  .heroImage img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Services Section Styles */
+  .servicesSection {
+    padding: 5rem 5%;
+    background-color: #f8f9fa;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #1a1a2e;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #4ecdc4;
+  }
+  
+  .servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .serviceCard {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .cardImageContainer {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .serviceCard:hover .cardImage {
+    transform: scale(1.05);
+  }
+  
+  .cardContent {
+    padding: 1.5rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+  }
+  
+  .orangeLine {
+    width: 50px;
+    height: 4px;
+    background-color: #4ecdc4;
+    margin-bottom: 1rem;
+  }
+  
+  .serviceCard h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-bottom: 0.8rem;
+  }
+  
+  .serviceCard p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .plusIcon {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid #1a1a2e;
+    color: #1a1a2e;
+    font-size: 1.4rem;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .serviceCard:hover .plusIcon {
+    background-color: #1a1a2e;
+    color: white;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1200px) {
+    .servicesGrid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .heroContent {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .heroText {
+      margin-bottom: 2rem;
+    }
+    
+    .heroImage {
+      justify-content: center;
+    }
+    
+    .servicesGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroText h1 {
+      font-size: 2rem;
+    }
+    
+    .heroText h2 {
+      font-size: 1.7rem;
+    }
+    
+    .sectionTitle {
+      font-size: 1.8rem;
+    }
+    
+    .servicesGrid {
+      grid-template-columns: 1fr;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroText h1 {
+      font-size: 1.7rem;
+    }
+    
+    .heroText h2 {
+      font-size: 1.4rem;
+    }
+    
+    .heroText p {
+      font-size: 1rem;
+    }
+  }

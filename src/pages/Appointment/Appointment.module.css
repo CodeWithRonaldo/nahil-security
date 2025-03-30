@@ -1,0 +1,328 @@
+/* AppointmentPage.module.css */
+.pageContainer {
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  /* Hero Section Styles */
+  .heroSection {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .heroSection {
+      flex-direction: row;
+      padding: 4rem 2rem;
+    }
+  }
+  
+  .heroContent {
+    max-width: 600px;
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .logoIcon {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+  
+  .heroText {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+  
+  .heroFormContainer {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .heroFormTitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .emailSignup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 480px) {
+    .emailSignup {
+      flex-direction: row;
+    }
+  }
+  
+  .emailInput {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .emailInput::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .emailInput:focus {
+    outline: none;
+    border-color: #4ecdc4;
+  }
+  
+  .signupButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #4ecdc4;
+    color: #16213e;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  
+  .signupButton:hover {
+    background-color: #3dbdb5;
+    transform: translateY(-2px);
+  }
+  
+  /* Appointment Form Styles */
+  .appointmentContainer {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 90%;
+    max-width: 800px;
+    margin: -3rem auto 3rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+  
+  .header {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  .header p {
+    margin: 0.5rem 0 0;
+    opacity: 0.9;
+  }
+  
+  /* Status Message Styles */
+  .statusMessage {
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  .success {
+    background-color: rgba(78, 205, 196, 0.2);
+    color: #2a8c85;
+    border: 1px solid rgba(78, 205, 196, 0.4);
+  }
+  
+  .error {
+    background-color: rgba(255, 99, 71, 0.2);
+    color: #d63c27;
+    border: 1px solid rgba(255, 99, 71, 0.4);
+  }
+  
+  .form {
+    padding: 1.5rem;
+  }
+  
+  .formSection {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .formSection:last-child {
+    border-bottom: none;
+  }
+  
+  .sectionTitle {
+    font-size: 1.2rem;
+    color: #1a1a2e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    color: #4ecdc4;
+  }
+  
+  .dateTimeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  @media (max-width: 600px) {
+    .dateTimeContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .formGroup {
+    margin-bottom: 1.2rem;
+  }
+  
+  .inputWithIcon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    left: 0.75rem;
+    color: #1a1a2e;
+    opacity: 0.6;
+  }
+  
+  .input,
+  .select,
+  .textarea {
+    width: 100%;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+  }
+  
+  .textarea {
+    padding-top: 2rem;
+  }
+  
+  .input:focus,
+  .select:focus,
+  .textarea:focus {
+    outline: none;
+    border-color: #4ecdc4;
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.2);
+  }
+  
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  @media (max-width: 600px) {
+    .formRow {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #1a1a2e;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  
+  .submitButton {
+    background-color: #4ecdc4;
+    color: #16213e;
+    border: none;
+    border-radius: 6px;
+    padding: 0.85rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 10px rgba(78, 205, 196, 0.3);
+  }
+  
+  .submitButton:hover:not(:disabled) {
+    background-color: #3dbdb5;
+    transform: translateY(-2px);
+  }
+  
+  .submitButton:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  .submitButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .appointmentContainer {
+      margin-top: -2rem;
+      width: 95%;
+    }
+    
+    .form {
+      padding: 1rem;
+    }
+    
+    .header {
+      padding: 1.2rem;
+    }
+    
+    .header h2 {
+      font-size: 1.5rem;
+    }
+  }

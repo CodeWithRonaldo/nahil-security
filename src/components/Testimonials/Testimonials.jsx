@@ -23,7 +23,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className={styles.testimonials}>
-      <h2 className={styles.heading}>what our customers say</h2>
+      <h2 className={styles.heading}>What our customers say</h2>
       <p className={styles.subtext}>
         At Nahil Security Company Limited we value what our customers think <br></br> or say about us.
         Their feedback helps us to work better.

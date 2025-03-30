@@ -98,18 +98,18 @@ const Navbar = () => {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
 
-            <li>
+            <li><Link to="/security-services">
               <Dropdown 
                 title="Security Services" 
                 links={securityServices} 
-              />
+              /></Link>
             </li>
 
-            <li>
+            <li><Link to="/logistic-services">
               <Dropdown 
                 title="Logistics Services" 
                 links={logisticsServices} 
-              />
+              /></Link>
             </li>
 
             <li><Link to="/appointment">Appointment</Link></li>

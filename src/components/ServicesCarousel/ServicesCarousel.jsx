@@ -8,6 +8,18 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styles from "./ServicesCarousel.module.css";
 import dispatchimg from "../../assets/dispatch.jpg"
+import vaultImage from '../../assets/vault-storage.png'; // Example from your screenshot
+import generalServicesImage from '../../assets/general-services.png'; // Example from your screenshot
+import secureValuableImage from '../../assets/secure-valuable.png'; // Example from your screenshot
+import guardingImage from '../../assets/guarding-services.png';
+import aviationImage from '../../assets/airline-security.png';
+import safeKeepingImage from '../../assets/safe-keeping.png';
+import dispatchImage from '../../assets/dispatch-arrangement.png';
+import counterSurveillanceImage from '../../assets/counter-surveillance.png';
+import cctvImage from '../../assets/closed-circuit.png';
+import privateEventsImage from '../../assets/private-events.png';
+import travellingImage from '../../assets/traveling-exhibition.png';
+
 
 const ServicesCarousel = () => {
   const ref = useRef(null);
@@ -26,35 +38,35 @@ const ServicesCarousel = () => {
       title: "Travelling Exhibitions",
       description:
         "Facility Inspection and Security Analysis, Guarding, and Physical Security Coordination with Government Security...",
-      image: dispatchimg,
+      image: travellingImage,
     },
     {
       id: 4,
-      title: "Guarding Services",
+      title: "Vault Storage",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
-      image: dispatchimg,
+      image: vaultImage,
     },
     {
       id: 5,
-      title: "Guarding Services",
+      title: "Private Events Services",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
-      image: dispatchimg,
+      image: privateEventsImage,
     },
     {
       id: 6,
-      title: "Guarding Services",
+      title: "Safe Keeping",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
-      image: dispatchimg,
+      image: safeKeepingImage,
     },
     {
       id: 7,
-      title: "Guarding Services",
+      title: "Closed Circuit",
       description:
         "Nahil Security provides guarding services for a variety of events such as high-profile occasions and...",
-      image: dispatchimg,
+      image: cctvImage,
     },
   ];
 
