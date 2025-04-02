@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight, Shield, Truck, Diamond } from "lucide-react";
 import styles from "./HeroSection.module.css";
-import SecurityImg from "../../assets/security-man.png";
+import SecurityImg from "../../assets/secure-valuable.png";
 import CargoImg from "../../assets/ship9.png";
 import VaultImg from "../../assets/vault9.png";
 
@@ -41,7 +41,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 6000); // Change slide every 6 seconds
+    }, 4000); // Change slide every 4 seconds
 
     return () => clearInterval(interval);
   }, [currentSlide]);
