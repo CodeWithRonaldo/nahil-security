@@ -1,0 +1,328 @@
+.heroWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    overflow: hidden;
+  }
+  
+  .heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    z-index: -1;
+  }
+  
+  .aboutHero {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .heroContent {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+  }
+  
+  .textContent {
+    flex: 1;
+    max-width: 600px;
+  }
+  
+  .companyTag {
+    display: inline-block;
+    background: linear-gradient(90deg, #3182ff, #5ca0ff);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .textContent h1 {
+    color: #0a2463;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  
+  .textContent h2 {
+    color: #486581;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  
+  .initialLetter {
+    float: left;
+    font-size: 4rem;
+    color: #3182ff;
+    margin-right: 10px;
+    line-height: 1;
+    font-weight: 700;
+  }
+  
+  .description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    color: #486581;
+    font-size: 1.1rem;
+  }
+  
+  .learnMoreBtn {
+    display: inline-block;
+    background: linear-gradient(90deg, #3182ff, #5ca0ff);
+    color: white;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(49, 130, 255, 0.2);
+  }
+  
+  .learnMoreBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(49, 130, 255, 0.3);
+  }
+  
+  .imageSection {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imageWrapper {
+    position: relative;
+    border-radius: 12px;
+    overflow: visible;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    perspective: 1000px;
+  }
+  
+  .imageBorder {
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #3182ff;
+    border-radius: 12px;
+    z-index: -1;
+  }
+  
+  .heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+  
+  .statImageContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .statImage {
+    position: absolute;
+    max-width: 150px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 4px solid white;
+  }
+  
+  .statImage1 {
+    top: -30px;
+    right: -40px;
+    transform: rotate(5deg);
+  }
+  
+  .statImage2 {
+    bottom: 30%;
+    right: -70px;
+    transform: rotate(-3deg);
+  }
+  
+  .statImage3 {
+    bottom: -20px;
+    left: -40px;
+    transform: rotate(-5deg);
+  }
+  
+  .scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .scrollText {
+    color: #486581;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  .scrollLine {
+    width: 2px;
+    height: 50px;
+    background-color: rgba(72, 101, 129, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scrollDot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #3182ff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    animation: scrollAnimation 2s infinite;
+  }
+  
+  @keyframes scrollAnimation {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: 100%;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .textContent h1 {
+      font-size: 2.5rem;
+    }
+    
+    .heroContent {
+      gap: 2rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .aboutHero {
+      padding: 3rem 2rem;
+    }
+    
+    .heroContent {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .textContent {
+      max-width: 100%;
+      order: 1;
+    }
+    
+    .imageSection {
+      order: 0;
+      margin-bottom: 2rem;
+    }
+    
+    .initialLetter {
+      float: none;
+      display: inline;
+      font-size: inherit;
+      color: #3182ff;
+      margin-right: 0;
+      font-weight: 700;
+    }
+    
+    .imageBorder {
+      display: none;
+    }
+    
+    .statImage1 {
+      top: 10px;
+      right: -20px;
+    }
+    
+    .statImage2 {
+      bottom: 20%;
+      right: -30px;
+    }
+    
+    .statImage3 {
+      bottom: 0px;
+      left: -20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .aboutHero {
+      padding: 2rem 1.5rem;
+      min-height: auto;
+    }
+    
+    .textContent h1 {
+      font-size: 2.25rem;
+    }
+    
+    .textContent h2 {
+      font-size: 1.25rem;
+    }
+    
+    .description p {
+      font-size: 1rem;
+    }
+    
+    .statImage {
+      max-width: 120px;
+    }
+    
+    .scrollIndicator {
+      display: none;
+    }
+    
+    .learnMoreBtn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .textContent h1 {
+      font-size: 2rem;
+    }
+    
+    .statImage {
+      max-width: 100px;
+    }
+    
+    .imageWrapper {
+      max-width: 320px;
+    }
+  }

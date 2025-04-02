@@ -7,6 +7,7 @@ import StatImage2 from "../../assets/stat2.png";
 import StatImage3 from "../../assets/stat3.png"; 
 import Testimonials from "../../components/Testimonials/Testimonials";
 import MissionVision from "../../components/MissionVision/MissionVision";
+import AboutHero from "../../components/AboutHero/AboutHero";
 
 const About = () => {
   const ref = useRef(null);
@@ -50,86 +51,14 @@ const About = () => {
   };
 
   return (
-    <motion.div 
-      ref={ref}
-      className={styles.aboutContainer}
-      variants={containerVariants}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-    >
-      <div className={styles.content}>
-        <motion.div className={styles.textContent} variants={itemVariants}>
-          <motion.h1 variants={itemVariants}>
-            Nahil Security Company Limited
-          </motion.h1>
-          
-          <motion.h2 variants={itemVariants}>
-            A Global Security Company with Global Reach
-          </motion.h2>
-          
-          <motion.div variants={itemVariants}>
-            <motion.p variants={itemVariants}>
-              <span className={styles.initialLetter}>N</span>ahil Security is a fully Licensed, Bonded and Insured Private 
-              Security Company and a leader in high quality and effective 
-              security. Our physical security services are designed to fully 
-              integrate with your requirements, likewise to provide the maximum 
-              protection for your workers and assets. Our officers are selected for 
-              their professional demeanor, attitude and ability. All officers undergo 
-              comprehensive background screening, criminal record and 
-              fingerprint checks.
-            </motion.p>
+<>
+<AboutHero/>
+<Testimonials/>
+<MissionVision/>
 
-            <motion.p variants={itemVariants}>
-              Our extensive training involves theoretical and practical courses 
-              including security planning, security and law, public relations, first 
-              aid, fire prevention and public decorum. Nahil Security officers are 
-              prepared to politely handle and diffuse delicate situations, while 
-              taking a proactive stance enforcing client policy. Commitment to 
-              effective security and exceptional customer service is our hallmark. 
-              Nahil Security Company guarantees our entire prospect client a safe 
-              haven for all type of asset.
-            </motion.p>
-          </motion.div>
-        </motion.div>
-
-        <motion.div className={styles.imageSection} variants={imageVariants}>
-          <motion.div className={styles.imageWrapper} variants={imageVariants}>
-            <img 
-              src={SecurityOfficer} 
-              alt="Nahil Security Officer" 
-              className={styles.heroImage}
-            />
-            
-            {/* Positioned Stat Images */}
-            <motion.div 
-              className={styles.statImageContainer}
-              variants={itemVariants}
-            >
-              <motion.img 
-                src={StatImage1} 
-                alt="Stat 1" 
-                className={`${styles.statImage} ${styles.statImage1}`}
-                variants={itemVariants}
-              />
-              <motion.img 
-                src={StatImage2} 
-                alt="Stat 2" 
-                className={`${styles.statImage} ${styles.statImage2}`}
-                variants={itemVariants}
-              />
-              <motion.img 
-                src={StatImage3} 
-                alt="Stat 3" 
-                className={`${styles.statImage} ${styles.statImage3}`}
-                variants={itemVariants}
-              />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </div>
-      <Testimonials/>
-      <MissionVision/>
-    </motion.div>
+</>
+     
+    
   );
 };
 

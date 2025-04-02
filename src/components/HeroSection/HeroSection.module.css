@@ -1,216 +1,330 @@
 .heroContainer {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: white;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
   position: relative;
-  overflow: hidden;
-  padding: 1rem;
-  /* width: 100%; */
-}
-
-.heroContent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  padding: 2rem 1rem;
+  height: 90vh;
+  min-height: 600px;
+  overflow: hidden;
 }
 
-/* Background image as a pseudo-element for better control */
-.heroContent::after {
-  content: "";
+.heroSlide {
   position: absolute;
-  top: 0;
-  right: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/white-security3.png");
-  background-position: top right;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
-  opacity: 0.7;
 }
 
-.textSection {
-  max-width: 600px;
+.slideOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.4) 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  position: relative;
-  z-index: 1;
-  /* margin-bottom: 50px; */
+}
+
+.contentContainer {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.textContent {
+  width: 100%;
+  max-width: 650px;
+  color: white;
+  padding: 2rem 0;
+}
+
+.companyIntro {
+  margin-bottom: 1.5rem;
+}
+
+.companyName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.companyTagline {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  margin-right: 1rem;
+}
+
+.slideIcon {
+  color: #fff;
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
 }
 
 .heroTitle {
-  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-size: 3.25rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1rem;
-  color: #4ecdc4;
-  text-align: center;
+  color: #fff;
+  position: relative;
+  margin: 0;
+}
+
+.heroTitle:after {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #3182ff, #5ca0ff);
 }
 
 .heroDescription {
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  color: #a0a0a0;
-  margin-bottom: 2rem;
+  font-size: 1.25rem;
   line-height: 1.6;
-  text-align: center;
-  max-width: 500px;
+  margin: 2rem 0;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .featureList {
   list-style: none;
   padding: 0;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  margin-bottom: 2.5rem;
 }
 
 .featureItem {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: clamp(0.9rem, 4vw, 1rem);
-  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.checkIcon {
-  color: #4ecdc4;
-  stroke-width: 3;
-  min-width: 24px;
+.featureBullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3182ff;
+  margin-right: 0.75rem;
+  display: inline-block;
 }
 
 .ctaSection {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  width: 100%;
-  max-width: 300px;
 }
 
-.primaryButton,
-.secondaryButton {
+.primaryButton, .secondaryButton {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
   font-weight: 600;
+  border-radius: 0.375rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  width: 100%;
 }
 
 .primaryButton {
-  background-color: #4ecdc4;
-  color: #16213e;
+  background: linear-gradient(90deg, #3182ff, #5ca0ff);
+  color: white;
+  border: none;
 }
 
 .primaryButton:hover {
-  background-color: #45b7aa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(49, 130, 255, 0.3);
 }
 
 .secondaryButton {
-  background-color: transparent;
-  border: 2px solid #4ecdc4;
-  color: #4ecdc4;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
 }
 
 .secondaryButton:hover {
-  background-color: rgba(78, 205, 196, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.imageSection {
+/* Slider Controls */
+.sliderControls {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
   width: 100%;
-  max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  z-index: 10;
 }
 
-.heroImage {
-  max-width: 100%;
-  /* height: 100px; */
-  object-fit: contain;
+.sliderButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-/* Tablet and Larger Screens */
-@media (min-width: 768px) {
-  .heroContent {
-    flex-direction: row;
-    text-align: left;
-    justify-content: flex-start;
+.sliderButton:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+.indicators {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background: white;
+  width: 26px;
+  border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .textContent {
+    max-width: 600px;
   }
   
-  .heroContent::after {
-    width: 50%;
-    opacity: 1;
-  }
-
-  .textSection {
-    align-items: flex-start;
-    max-width: 50%;
-  }
-
-  .heroTitle,
-  .heroDescription {
-    text-align: left;
-  }
-
-  .featureList {
-    align-items: flex-start;
-  }
-
-  .ctaSection {
-    flex-direction: row;
-    max-width: none;
-    width: auto;
-  }
-
-  .primaryButton,
-  .secondaryButton {
-    width: auto;
-  }
-}
-
-/* Small Devices */
-@media (max-width: 480px) {
-  .heroContainer {
-    padding: 0.5rem;
-  }
-  
-  .heroContent::after {
-    opacity: 0.3; /* Make background image more subtle on mobile */
-  }
-
   .heroTitle {
-    font-size: 1.8rem;
+    font-size: 2.75rem;
   }
+}
 
-  .heroDescription {
-    font-size: 0.9rem;
+@media (max-width: 992px) {
+  .slideOverlay {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 100%);
   }
-
+  
+  .contentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .textContent {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .titleContainer {
+    flex-direction: column;
+  }
+  
+  .iconWrapper {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .heroTitle:after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
   .featureItem {
-    font-size: 0.8rem;
+    justify-content: center;
   }
+}
 
+@media (max-width: 768px) {
+  .heroContainer {
+    height: 100vh;
+  }
+  
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.1rem;
+  }
+  
+  .contentContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroContainer {
+    height: 100vh;
+  }
+  
+  .textContent {
+    padding: 1.5rem 0;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .featureList {
+    margin-bottom: 2rem;
+  }
+  
   .ctaSection {
-    gap: 0.5rem;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .primaryButton, .secondaryButton {
+    width: 100%;
+  }
+  
+  .sliderControls {
+    bottom: 1.5rem;
   }
 }
