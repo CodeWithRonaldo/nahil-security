@@ -1,0 +1,20 @@
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: #e0e0e0;
+    font-size: 1rem;
+  }
+  
+  .featureIcon {
+    color: #FF6B35; /* Or your brand accent color */
+    stroke-width: 3;
+    min-width: 20px;
+  }

@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Check, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import styles from "./LogisticServices.module.css";
-import heroImage from "../../assets/logistic4.png"; // Add your logistics hero image
-
-// Import service images
 import thirdPartyImage from "../../assets/third-party.png";
 import cargoHandlingImage from "../../assets/cargo-handling.png";
 import expressDeliveryImage from "../../assets/express.png";
@@ -13,82 +12,34 @@ import customsBrokerageImage from "../../assets/customs-brokerage.png";
 import fineArtsImage from "../../assets/fine-art.png";
 import jetServiceImage from "../../assets/jet-services.png";
 import tradeShowImage from "../../assets/trade-show.png";
-import { Link } from "react-router-dom";
 
-const logisticsServices = [
-  {
-    id: 1,
-    title: "Third Party Logistics (3PL)",
-    description:
-      "Comprehensive third-party logistics solutions to streamline your supply chain operations.",
-    image: thirdPartyImage,
-  },
-  {
-    id: 2,
-    title: "Consignments/Cargo Handling",
-    description:
-      "Professional handling of consignments and cargo with maximum security and efficiency.",
-    image: cargoHandlingImage,
-  },
-  {
-    id: 3,
-    title: "Express Delivery",
-    description:
-      "Fast and reliable express delivery services for time-sensitive shipments.",
-    image: expressDeliveryImage,
-  },
-  {
-    id: 4,
-    title: "Secured Delivery",
-    description:
-      "High-security transportation solutions for valuable and sensitive deliveries.",
-    image: securedDeliveryImage,
-  },
-  {
-    id: 5,
-    title: "Commodities",
-    description:
-      "Specialized handling and transportation of various commodities across multiple industries.",
-    image: commoditiesImage,
-  },
-  {
-    id: 6,
-    title: "Customs Brokerage",
-    description:
-      "Expert customs clearance services to navigate complex international regulations.",
-    image: customsBrokerageImage,
-  },
-  {
-    id: 7,
-    title: "Fine Arts",
-    description:
-      "Specialized transportation and handling of fine art and cultural artifacts.",
-    image: fineArtsImage,
-  },
-  {
-    id: 8,
-    title: "Jet Service",
-    description:
-      "Premium air transport solutions for urgent and high-value shipments.",
-    image: jetServiceImage,
-  },
-  {
-    id: 9,
-    title: "Trade Show Packages",
-    description:
-      "Comprehensive logistics services for trade show exhibits and materials.",
-    image: tradeShowImage,
-  },
-];
 
 const LogisticsServices = () => {
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: {
+        duration: 0.8,
+        type: "spring",
+        stiffness: 100,
+      },
     },
   };
 
@@ -115,44 +66,135 @@ const LogisticsServices = () => {
     },
   };
 
+  
+  const logisticsFeatures = [
+    "Global Shipping Network",
+    "Real-time Tracking",
+    "Secured Transport",
+  ];
+
+  
+  const logisticsServices = [
+    
+    {
+      id: 1,
+      title: "Third Party Logistics (3PL)",
+      description:
+        "Comprehensive third-party logistics solutions to streamline your supply chain operations.",
+      image: thirdPartyImage,
+    },
+    {
+      id: 2,
+      title: "Consignments/Cargo Handling",
+      description:
+        "Professional handling of consignments and cargo with maximum security and efficiency.",
+      image: cargoHandlingImage,
+    },
+    {
+      id: 3,
+      title: "Express Delivery",
+      description:
+        "Fast and reliable express delivery services for time-sensitive shipments.",
+      image: expressDeliveryImage,
+    },
+    {
+      id: 4,
+      title: "Secured Delivery",
+      description:
+        "High-security transportation solutions for valuable and sensitive deliveries.",
+      image: securedDeliveryImage,
+    },
+    {
+      id: 5,
+      title: "Commodities",
+      description:
+        "Specialized handling and transportation of various commodities across multiple industries.",
+      image: commoditiesImage,
+    },
+    {
+      id: 6,
+      title: "Customs Brokerage",
+      description:
+        "Expert customs clearance services to navigate complex international regulations.",
+      image: customsBrokerageImage,
+    },
+    {
+      id: 7,
+      title: "Fine Arts",
+      description:
+        "Specialized transportation and handling of fine art and cultural artifacts.",
+      image: fineArtsImage,
+    },
+    {
+      id: 8,
+      title: "Jet Service",
+      description:
+        "Premium air transport solutions for urgent and high-value shipments.",
+      image: jetServiceImage,
+    },
+    {
+      id: 9,
+      title: "Trade Show Packages",
+      description:
+        "Comprehensive logistics services for trade show exhibits and materials.",
+      image: tradeShowImage,
+    },
+    
+  ];
+
   return (
     <div className={styles.logisticsServicesPage}>
-      {/* Hero Section */}
-      <section className={styles.heroSection}>
-        <div className={styles.heroContent}>
+     
+      <div className={styles.heroContainer}>
+        <div className={`${styles.heroContent} ${styles.logisticsHero}`}>
           <motion.div
-            className={styles.heroText}
+            className={styles.textSection}
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
-            variants={fadeIn}
           >
-            <h1>Nahil Logistics Company Limited</h1>
-            <h2>Logistics Services</h2>
-            <p>
+            <motion.h1 className={styles.heroTitle} variants={itemVariants}>
+              Nahil Logistics
+              <br />
+              Company Limited
+            </motion.h1>
+
+            <motion.p className={styles.heroDescription} variants={itemVariants}>
               We deliver comprehensive logistics solutions to meet the unique
               requirements of businesses and individuals, ensuring efficient
               movement of goods across the globe.
-            </p>
+            </motion.p>
+            
+            <motion.ul className={styles.featureList} variants={containerVariants}>
+              {logisticsFeatures.map((feature, index) => (
+                <motion.li
+                  key={index}
+                  className={styles.featureItem}
+                  variants={itemVariants}
+                >
+                  <Check className={styles.checkIcon} />
+                  {feature}
+                </motion.li>
+              ))}
+            </motion.ul>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/appointment" className={styles.appointmentBtn}>
-                Book an Appointment with Us
+            <motion.div className={styles.ctaSection} variants={containerVariants}>
+              <Link to="/appointment">
+                <motion.button className={styles.primaryButton} variants={itemVariants}>
+                  Book an Appointment <ArrowRight />
+                </motion.button>
               </Link>
+              
+              {/* <motion.button className={styles.secondaryButton} variants={itemVariants}>
+                View Services
+              </motion.button> */}
             </motion.div>
           </motion.div>
-
-          <motion.div
-            className={styles.heroImage}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <img src={heroImage} alt="Logistics professional" />
-          </motion.div>
+          {/* Background image is handled through CSS */}
         </div>
-      </section>
+      </div>
 
-      {/* Services Section */}
+     
       <section className={styles.servicesSection}>
         <motion.h2
           className={styles.sectionTitle}

@@ -2,8 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import styles from "./SecurityServices.module.css";
 import heroImage from "../../assets/security-man.png"; // Add your hero image
+import { Check, ArrowRight } from "lucide-react";
 
-// Import service images
 import vaultImage from "../../assets/vault-storage.png"; // Example from your screenshot
 import generalServicesImage from "../../assets/general-services.png"; // Example from your screenshot
 import secureValuableImage from "../../assets/secure-valuable.png"; // Example from your screenshot
@@ -19,89 +19,36 @@ import { Link } from "react-router-dom";
 
 
 
-const securityServices = [
-  {
-    id: 1,
-    title: "Guarding Services",
-    description:
-      "Professional guarding solutions for residential and commercial properties.",
-    image: guardingImage,
-  },
-  {
-    id: 2,
-    title: "General Services",
-    description:
-      "Nahil Security Company's Civil Investigations and Bureau of intelligence prov",
-    image: generalServicesImage,
-  },
-  {
-    id: 3,
-    title: "Secure Valuable",
-    description:
-      "Nahil Security company protects valuable assets such as Money, Gold, Diamonds",
-    image: secureValuableImage,
-  },
-  {
-    id: 4,
-    title: "Airline/Aviation Security",
-    description:
-      "Advanced security protocols for aviation facilities and operations.",
-    image: aviationImage,
-  },
-  {
-    id: 5,
-    title: "Safe Keeping",
-    description: "Secure storage and safekeeping services for your valuables.",
-    image: safeKeepingImage,
-  },
-  {
-    id: 6,
-    title: "Dispatch Arrangement",
-    description: "Efficient security dispatch management and coordination.",
-    image: dispatchImage,
-  },
-  {
-    id: 7,
-    title: "Counter Surveillance",
-    description: "Detect and neutralize unauthorized surveillance activities.",
-    image: counterSurveillanceImage,
-  },
-  {
-    id: 8,
-    title: "Closed Circuit TV",
-    description: "State-of-the-art CCTV monitoring and management systems.",
-    image: cctvImage,
-  },
-  {
-    id: 9,
-    title: "Private Events",
-    description:
-      "Discreet security services for private events and gatherings.",
-    image: privateEventsImage,
-  },
-  {
-    id: 10,
-    title: "Vault & Secure Storage Facilities",
-    description:
-      "Nahil Security's highly-secured, strategically located storage facilities are",
-    image: vaultImage,
-  },
-  {
-    id: 11,
-    title: "Travelling Exhibitions",
-    description: "Security solutions for mobile exhibitions and displays.",
-    image: travellingImage,
-  },
-];
+
+
+
 
 const SecurityServices = () => {
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: {
+        duration: 0.8,
+        type: "spring",
+        stiffness: 100,
+      },
     },
   };
 
@@ -128,44 +75,142 @@ const SecurityServices = () => {
     },
   };
 
+ 
+  const securityFeatures = [
+    "24/7 Surveillance",
+    "Rapid Response Teams",
+    "Advanced Equipment",
+  ];
+
+  
+  const securityServices = [
+    {
+      id: 1,
+      title: "Guarding Services",
+      description:
+        "Professional guarding solutions for residential and commercial properties.",
+      image: guardingImage,
+    },
+    {
+      id: 2,
+      title: "General Services",
+      description:
+        "Nahil Security Company's Civil Investigations and Bureau of intelligence prov",
+      image: generalServicesImage,
+    },
+    {
+      id: 3,
+      title: "Secure Valuable",
+      description:
+        "Nahil Security company protects valuable assets such as Money, Gold, Diamonds",
+      image: secureValuableImage,
+    },
+    {
+      id: 4,
+      title: "Airline/Aviation Security",
+      description:
+        "Advanced security protocols for aviation facilities and operations.",
+      image: aviationImage,
+    },
+    {
+      id: 5,
+      title: "Safe Keeping",
+      description: "Secure storage and safekeeping services for your valuables.",
+      image: safeKeepingImage,
+    },
+    {
+      id: 6,
+      title: "Dispatch Arrangement",
+      description: "Efficient security dispatch management and coordination.",
+      image: dispatchImage,
+    },
+    {
+      id: 7,
+      title: "Counter Surveillance",
+      description: "Detect and neutralize unauthorized surveillance activities.",
+      image: counterSurveillanceImage,
+    },
+    {
+      id: 8,
+      title: "Closed Circuit TV",
+      description: "State-of-the-art CCTV monitoring and management systems.",
+      image: cctvImage,
+    },
+    {
+      id: 9,
+      title: "Private Events",
+      description:
+        "Discreet security services for private events and gatherings.",
+      image: privateEventsImage,
+    },
+    {
+      id: 10,
+      title: "Vault & Secure Storage Facilities",
+      description:
+        "Nahil Security's highly-secured, strategically located storage facilities are",
+      image: vaultImage,
+    },
+    {
+      id: 11,
+      title: "Travelling Exhibitions",
+      description: "Security solutions for mobile exhibitions and displays.",
+      image: travellingImage,
+    },
+  ];
+
   return (
     <div className={styles.securityServicesPage}>
-      {/* Hero Section */}
-      <section className={styles.heroSection}>
-        <div className={styles.heroContent}>
+     
+      <div className={styles.heroContainer}>
+        <div className={`${styles.heroContent} ${styles.securityHero}`}>
           <motion.div
-            className={styles.heroText}
+            className={styles.textSection}
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
-            variants={fadeIn}
           >
-            <h1>Nahil Security Company Limited</h1>
-            <h2>Security Services</h2>
-            <p>
+            <motion.h1 className={styles.heroTitle} variants={itemVariants}>
+              Nahil Security
+              <br />
+              Company Limited
+            </motion.h1>
+
+            <motion.p className={styles.heroDescription} variants={itemVariants}>
               We offer a host of services to suit the requirements and demands
               of every individual, group, company or organization whose security
               we take responsibility for.
-            </p>
+            </motion.p>
+            
+            <motion.ul className={styles.featureList} variants={containerVariants}>
+              {securityFeatures.map((feature, index) => (
+                <motion.li
+                  key={index}
+                  className={styles.featureItem}
+                  variants={itemVariants}
+                >
+                  <Check className={styles.checkIcon} />
+                  {feature}
+                </motion.li>
+              ))}
+            </motion.ul>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link to="/appointment" className={styles.appointmentBtn}>
-                Book an Appointment with Us
+            <motion.div className={styles.ctaSection} variants={containerVariants}>
+              <Link to="/appointment">
+                <motion.button className={styles.primaryButton} variants={itemVariants}>
+                  Book an Appointment <ArrowRight />
+                </motion.button>
               </Link>
+              
+              {/* <motion.button className={styles.secondaryButton} variants={itemVariants}>
+                Explore Services
+              </motion.button> */}
             </motion.div>
           </motion.div>
-
-          <motion.div
-            className={styles.heroImage}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <img src={heroImage} alt="Security professional" />
-          </motion.div>
+          {/* Background image is handled through CSS */}
         </div>
-      </section>
+      </div>
 
-      {/* Services Section */}
+    
       <section className={styles.servicesSection}>
         <motion.h2
           className={styles.sectionTitle}
