@@ -8,7 +8,7 @@
   /* Hero Section */
   .contactHero {
     position: relative;
-    /* width:100%; */
+    width:100%;
     min-height: 350px;
     background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.9)), url('/path-to-your-contact-hero-image.jpg');
     background-size: cover;
@@ -310,6 +310,7 @@
     .contactHero {
       min-height: 250px;
       padding: 3rem 1.5rem;
+      /* max-width: 1000px; */
     }
     
     .contactHero h1 {
