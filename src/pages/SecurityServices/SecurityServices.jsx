@@ -16,6 +16,7 @@ import cctvImage from "../../assets/closed-circuit.png";
 import privateEventsImage from "../../assets/private-events.png";
 import travellingImage from "../../assets/traveling-exhibition.png";
 import { Link } from "react-router-dom";
+import SecurityHero from "../../components/SecurityServicesHero/SecurityServicesHero";
 
 
 
@@ -162,52 +163,7 @@ const SecurityServices = () => {
     <div className={styles.securityServicesPage}>
      
       <div className={styles.heroContainer}>
-        <div className={`${styles.heroContent} ${styles.securityHero}`}>
-          <motion.div
-            className={styles.textSection}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 className={styles.heroTitle} variants={itemVariants}>
-              Nahil Security
-              <br />
-              Company Limited
-            </motion.h1>
-
-            <motion.p className={styles.heroDescription} variants={itemVariants}>
-              We offer a host of services to suit the requirements and demands
-              of every individual, group, company or organization whose security
-              we take responsibility for.
-            </motion.p>
-            
-            <motion.ul className={styles.featureList} variants={containerVariants}>
-              {securityFeatures.map((feature, index) => (
-                <motion.li
-                  key={index}
-                  className={styles.featureItem}
-                  variants={itemVariants}
-                >
-                  <Check className={styles.checkIcon} />
-                  {feature}
-                </motion.li>
-              ))}
-            </motion.ul>
-
-            <motion.div className={styles.ctaSection} variants={containerVariants}>
-              <Link to="/appointment">
-                <motion.button className={styles.primaryButton} variants={itemVariants}>
-                  Book an Appointment <ArrowRight />
-                </motion.button>
-              </Link>
-              
-              {/* <motion.button className={styles.secondaryButton} variants={itemVariants}>
-                Explore Services
-              </motion.button> */}
-            </motion.div>
-          </motion.div>
-          {/* Background image is handled through CSS */}
-        </div>
+        <SecurityHero/>
       </div>
 
     

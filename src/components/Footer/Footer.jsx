@@ -56,11 +56,11 @@ const Footer = () => {
 
       <div className={styles.copyright}>
         <p>© 2022 Nahil Security Company Limited. All rights reserved.</p>
-        <div className={styles.socialIcons}>
+        {/* <div className={styles.socialIcons}>
           <a href="#" className={styles.socialIcon}><FaFacebook /></a>
           <a href="#" className={styles.socialIcon}><FaTwitter /></a>
           <a href="#" className={styles.socialIcon}><FaWhatsapp /></a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

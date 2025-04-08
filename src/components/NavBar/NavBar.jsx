@@ -63,30 +63,30 @@ const Navbar = () => {
   }, []);
 
   const securityServices = [
-    { path: "/guarding-services", label: "Guarding Services" },
-    { path: "/general-services", label: "General Services" },
-    { path: "/secure-valuable", label: "Secure Valuable" },
-    { path: "/airline-aviation-security", label: "Airline/Aviation Security" },
-    { path: "/safe-keeping", label: "Safe Keeping" },
-    { path: "/dispatch-arrangement", label: "Dispatch Arrangement" },
-    { path: "/counter-surveillance", label: "Counter Surveillance" },
-    { path: "/cctv", label: "Closed Circuit TV" },
-    { path: "/private-events", label: "Private Events" },
-    { path: "/vault-storage", label: "Vault & Secure Storage Facilities" },
-    { path: "/travelling-exhibitions", label: "Travelling Exhibitions" }
+    // { path: "/guarding-services", label: "Guarding Services" },
+    { path: "/about", label: "General Services" },
+    { path: "/security-services", label: "Secure Valuable" },
+    // { path: "/airline-aviation-security", label: "Airline/Aviation Security" },
+    { path: "/security-services", label: "Safe Keeping" },
+    { path: "/logistic-services", label: "Dispatch Arrangement" },
+    // { path: "/counter-surveillance", label: "Counter Surveillance" },
+    // { path: "/cctv", label: "Closed Circuit TV" },
+    // { path: "/private-events", label: "Private Events" },
+    { path: "/security-services", label: "Vault & Secure Storage Facilities" },
+    // { path: "/travelling-exhibitions", label: "Travelling Exhibitions" }
   ];
 
   const logisticsServices = [
-    { path: "/third-party-logistics", label: "Third Party Logistics (3PL)" },
-    { path: "/consignments", label: "Consignments/Cargo Handling" },
-    { path: "/express-delivery", label: "Express Delivery" },
-    { path: "/secured-delivery", label: "Secured Delivery" },
-    { path: "/commodities", label: "Commodities" },
-    { path: "/customs-brokerage", label: "Customs Brokerage" },
-    { path: "/diamond-jewellery", label: "Diamond and Jewelleries" },
-    { path: "/fine-arts", label: "Fine Arts" },
-    { path: "/jet-service", label: "Jet Service" },
-    { path: "/trade-show-packages", label: "Trade Show Packages" }
+    { path: "/logistic-services", label: "Third Party Logistics (3PL)" },
+    // { path: "/logistic-services", label: "Consignments/Cargo Handling" },
+    { path: "/logistic-services", label: "Express Delivery" },
+    { path: "/security-services", label: "Secured Delivery" },
+    // { path: "/commodities", label: "Commodities" },
+    // { path: "/customs-brokerage", label: "Customs Brokerage" },
+    { path: "/logistic-services", label: "Diamond and Jewelleries" },
+    // { path: "/fine-arts", label: "Fine Arts" },
+    // { path: "/jet-service", label: "Jet Service" },
+    // { path: "/trade-show-packages", label: "Trade Show Packages" }
   ];
 
   const toggleMenu = () => {

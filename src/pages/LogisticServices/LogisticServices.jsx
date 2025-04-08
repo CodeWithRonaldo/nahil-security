@@ -184,13 +184,14 @@ const LogisticsServices = () => {
                   Book an Appointment <ArrowRight />
                 </motion.button>
               </Link>
-              
-              {/* <motion.button className={styles.secondaryButton} variants={itemVariants}>
+              <Link to="/logistic-services">
+              <motion.button className={styles.secondaryButton} variants={itemVariants}>
                 View Services
-              </motion.button> */}
+              </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
-          {/* Background image is handled through CSS */}
+          
         </div>
       </div>
 

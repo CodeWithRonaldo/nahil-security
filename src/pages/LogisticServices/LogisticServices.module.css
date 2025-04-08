@@ -125,7 +125,9 @@
     background-color: #4ecdc4;
     color: #16213e;
   }
-  
+  .primaryButton a{
+    text-decoration: none;
+  }
   .primaryButton:hover {
     background-color: #45b7aa;
   }
@@ -134,6 +136,10 @@
     background-color: transparent;
     border: 2px solid #4ecdc4;
     color: #4ecdc4;
+  }
+
+  .secondaryButton a{
+    text-decoration: none;
   }
   
   .secondaryButton:hover {
