@@ -10,11 +10,11 @@ import Cctv from "../../assets/cctv-camera.png";
 import Aviation from "../../assets/aviation.png";
 
 const services = [
-  { title: "Safe Keeping Service", icon: SafeIcon, link: "/safe-keeping" },
-  { title: "Counter Surveillance", icon: Cctv, link: "/counter-surveillance" },
+  { title: "Safe Keeping Service", icon: SafeIcon, link: "/security-services" },
+  { title: "Counter Surveillance", icon: Cctv, link: "/security-services" },
   { title: "Private Events", icon: PoliceMan, link: "/private-events" },
-  { title: "Aviation Security", icon: Aviation, link: "/aviation-security" },
-  { title: "Vaults Storage", icon: Vault, link: "/vaults-storage" },
+  { title: "Aviation Security", icon: Aviation, link: "/security-services" },
+  { title: "Vaults Storage", icon: Vault, link: "/security-services" },
 ];
 
 const SecurityServices = () => {

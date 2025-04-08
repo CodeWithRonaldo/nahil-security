@@ -31,11 +31,15 @@ const router = createBrowserRouter([
         element: <SecurityServices/>
       },
       {
-        path:'appointment', element: <Appointment/>
+        path:'appointment', 
+        element: <Appointment/>
       }
     ],
   },
-]);
+], {
+  
+  scrollBehavior: "auto"
+});
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
