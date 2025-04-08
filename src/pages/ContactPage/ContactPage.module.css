@@ -1,0 +1,331 @@
+.contactPageWrapper {
+    /* width: 100%; */
+    min-height: 100vh;
+    /* width: 95%; */
+    max-width: 1200px;
+  }
+  
+  /* Hero Section */
+  .contactHero {
+    position: relative;
+    /* width:100%; */
+    min-height: 350px;
+    background: linear-gradient(rgba(10, 36, 99, 0.8), rgba(10, 36, 99, 0.9)), url('/path-to-your-contact-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 4rem 2rem;
+  }
+  
+  .contactHeroContent {
+    max-width: 800px;
+  }
+  
+  .contactHero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .contactHero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+  
+  /* Contact Content */
+  .contactContent {
+    padding: 5rem 0;
+    background-color: #f5f7fa;
+  }
+  
+  .container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+  }
+  
+  /* Contact Info Section */
+  .contactInfoSection {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sectionTitle {
+    color: #0a2463;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .sectionDesc {
+    color: #486581;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .contactInfoGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .infoCard {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .infoCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .infoIconContainer {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(90deg, #3182ff, #5ca0ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  .infoIcon {
+    color: #fff;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .infoCard h3 {
+    color: #0a2463;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .infoCard p {
+    color: #486581;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Contact Form */
+  .contactFormContainer {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+  }
+  
+  .formHeader {
+    margin-bottom: 2rem;
+  }
+  
+  .formHeader h2 {
+    color: #0a2463;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .formHeader p {
+    color: #486581;
+    font-size: 1.1rem;
+  }
+  
+  .contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #486581;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    padding: 0.875rem 1rem;
+    border: 1px solid #e4e9f2;
+    border-radius: 0.375rem;
+    font-size: 1rem;
+    color: #486581;
+    /* width: 100%; */
+    transition: all 0.3s ease;
+  }
+  
+  .formGroup input:focus,
+  .formGroup textarea:focus {
+    outline: none;
+    border-color: #3182ff;
+    box-shadow: 0 0 0 3px rgba(49, 130, 255, 0.1);
+  }
+  
+  .formGroup input::placeholder,
+  .formGroup textarea::placeholder {
+    color: #a0aec0;
+  }
+  
+  .submitButton {
+    background: linear-gradient(90deg, #3182ff, #5ca0ff);
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(49, 130, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 3.5rem;
+  }
+  
+  .submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(49, 130, 255, 0.3);
+  }
+  
+  .submitButton:disabled {
+    background: linear-gradient(90deg, #3182ff, #5ca0ff);
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+  
+  /* Loading Animation */
+  .loadingSpinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+  
+  .loadingDot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: loadingAnimation 1.4s infinite ease-in-out;
+  }
+  
+  .loadingDot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .loadingDot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .loadingDot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes loadingAnimation {
+    0%, 100% {
+      transform: scale(0.6);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Map Section */
+  .mapSection {
+    width: 100%;
+  }
+  
+  .mapWrapper {
+    width: 100%;
+    height: 450px;
+  }
+  
+  .mapWrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+    
+    .contactInfoGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contactHero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .formRow {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .contactInfoGrid {
+      grid-template-columns: 1fr;
+    }
+    
+    .contactFormContainer {
+      padding: 2rem 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contactHero {
+      min-height: 250px;
+      padding: 3rem 1.5rem;
+    }
+    
+    .contactHero h1 {
+      font-size: 2rem;
+    }
+    
+    .contactContent {
+      padding: 3rem 0;
+    }
+    
+    .container {
+      padding: 0 1.5rem;
+    }
+    
+    .sectionTitle,
+    .formHeader h2 {
+      font-size: 1.75rem;
+    }
+  }

@@ -16,15 +16,16 @@ const Footer = () => {
       Nahil Security is a fully Licensed, Bonded and Insured Private Security Company <br />and a leader in high quality and effective security. <br />
       Email: info@nahilsecuritycompany.com
       </p>
-
+      
       <div className={styles.columnContainer}>
         <div className={styles.column}>
           <h4>Company</h4>
           <ul>
-            <li><a href="#">About nahil</a></li>
-            <li><a href="#">Book Appointment</a></li>
+            
+          <li><a href="about">About Nahil</a></li>
+            <li><a href="/appointment">Book Appointment</a></li>
             <li><a href="#">FAQs</a></li>
-            <li><a href="#">Contact us</a></li>
+            <li><a href="/contact">Contact us</a></li>
             <li><a href="#">Career Opportunity</a></li>
           </ul>
         </div>

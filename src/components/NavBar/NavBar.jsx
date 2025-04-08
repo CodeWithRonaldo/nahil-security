@@ -18,20 +18,22 @@ const NavDropdown = ({ title, path, links, closeMenu }) => {
         <Link to={path} onClick={closeMenu} className={styles.navLink}>
           {title}
         </Link>
-        <button 
-          className={styles.dropdownArrow} 
+        <button
+          className={styles.dropdownArrow}
           onClick={toggleDropdown}
           aria-label={`Toggle ${title} dropdown`}
         >
           {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
       </div>
-      
+
       {isOpen && (
         <ul className={styles.dropdownMenu}>
           {links.map((link) => (
             <li key={link.path}>
-              <Link to={link.path} onClick={closeMenu}>{link.label}</Link>
+              <Link to={link.path} onClick={closeMenu}>
+                {link.label}
+              </Link>
             </li>
           ))}
         </ul>
@@ -58,8 +60,8 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const securityServices = [
@@ -108,32 +110,49 @@ const Navbar = () => {
           {menuOpen ? <X size={24} /> : <Menu size={24} />}
         </div>
 
-        <div 
+        <div
           className={`
             ${styles.navMenu} 
-            ${menuOpen ? styles.navMenuActive : ''}
+            ${menuOpen ? styles.navMenuActive : ""}
           `}
         >
           <ul className={styles.navList}>
-            <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-            <li><Link to="/about" onClick={closeMenu}>About Us</Link></li>
             <li>
-              <NavDropdown 
-                title="Security Services" 
+              <Link to="/" onClick={closeMenu}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" onClick={closeMenu}>
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={closeMenu}>
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <NavDropdown
+                title="Security Services"
                 path="/security-services"
                 links={securityServices}
                 closeMenu={closeMenu}
               />
             </li>
             <li>
-              <NavDropdown 
-                title="Logistics Services" 
+              <NavDropdown
+                title="Logistics Services"
                 path="/logistic-services"
                 links={logisticsServices}
                 closeMenu={closeMenu}
               />
             </li>
-            <li><Link to="/appointment" onClick={closeMenu}>Appointment</Link></li>
+            <li>
+              <Link to="/appointment" onClick={closeMenu}>
+                Appointment
+              </Link>
+            </li>
           </ul>
 
           <div className={styles.navActions}>

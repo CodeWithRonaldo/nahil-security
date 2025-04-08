@@ -5,6 +5,9 @@ import styles from "./HeroSection.module.css";
 import SecurityImg from "../../assets/secure-valuable.png";
 import CargoImg from "../../assets/ship9.png";
 import VaultImg from "../../assets/vault9.png";
+import { Link } from "react-router-dom";
+
+
 
 const HeroSection = () => {
   // Slide content - organized by service categories
@@ -183,10 +186,12 @@ const HeroSection = () => {
                   <motion.button className={styles.primaryButton} variants={itemVariants}>
                     View All Services <ArrowRight size={18} />
                   </motion.button>
-
+                  <Link to="contact" >
+                  
                   <motion.button className={styles.secondaryButton} variants={itemVariants}>
                     Contact Us
                   </motion.button>
+                  </Link>
                 </motion.div>
               </motion.div>
             </div>
